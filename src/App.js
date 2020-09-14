@@ -1,11 +1,11 @@
 import React from "react";
 import axios from "axios";
 import {
+  Label,
   FormGroup,
   InputGroup,
   Button,
-  Card,
-  Elevation,
+  Divider,
 } from "@blueprintjs/core";
 
 import "./App.css";
@@ -64,17 +64,20 @@ class Random extends React.Component {
     return (
       <div>
         <p>{this.state.random}</p>
+        <Divider />
         <FormGroup
           helperText="Random number generator demo..."
-          label="Seed"
+          label="Random Number Generator"
           labelFor="text-input"
-          labelInfo="(required)"
         >
-          <InputGroup
-            id="seed"
-            value={this.state.seed}
-            onChange={this.handleChange}
-          />
+          <Label>
+            seed
+            <InputGroup
+              id="seed"
+              value={this.state.seed}
+              onChange={this.handleChange}
+            />
+          </Label>
           <Button icon="refresh" text="generate" onClick={this.onGenerate} />
         </FormGroup>
       </div>
